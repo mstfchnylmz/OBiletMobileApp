@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_background_color"
+    tools:context=".fragment.FlightTicketFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flightConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/linearFromWhereFlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp">
+
+            <ImageView
+                android:id="@+id/imageFromWhereFlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_location_on_gray_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTextFromWhereFlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nereden"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerFromWhereFlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearToWhereFlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/linearFromWhereFlight">
+
+            <ImageView
+                android:id="@+id/imageToWhereFlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_location_on_gray_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTextToWhereFlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nereye"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerToWhereFlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dropDownVerticalOffset="40dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/changeButtonFlightTicketFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_circle_button"
+            android:padding="10dp"
+            android:src="@drawable/ic_exchange_arrow"
+            android:clickable="true"
+            android:elevation="8dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/linearToWhereFlight"
+            app:layout_constraintEnd_toEndOf="@+id/linearFromWhereFlight"
+            app:layout_constraintTop_toTopOf="@+id/linearFromWhereFlight" />
+
+        <LinearLayout
+            android:id="@+id/linearCalendarFlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/linearToWhereFlight">
+
+            <ImageView
+                android:id="@+id/imageCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_calendar_month_gray_24" />
+
+            <LinearLayout
+                android:id="@+id/linearCardDeparture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTextCalendarFlight2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gidiş"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/numberOfDayDepartureDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18"
+                        android:textSize="36sp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="4dp">
+                        <TextView
+                            android:id="@+id/monthDepartureDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kasım"/>
+                        <TextView
+                            android:id="@+id/dayDepartureDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pazartesi"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/button_background_gray"
+                android:layout_marginStart="36dp"/>
+
+            <LinearLayout
+                android:id="@+id/linearCardReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/titleTextCalendarFlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gidiş"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/numberOfDayReturnDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18"
+                        android:textSize="36sp"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="4dp">
+                        <TextView
+                            android:id="@+id/monthReturnDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kasım"/>
+                        <TextView
+                            android:id="@+id/dayReturnDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pazartesi"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/clearDateFlightTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_24"
+                android:background="@drawable/custom_circle_button"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearPassenger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/linearCalendarFlight"
+            tools:layout_editor_absoluteX="16dp">
+
+            <ImageView
+                android:id="@+id/imagePassenger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_person_24" />
+
+            <TextView
+                android:id="@+id/numberOfPassengerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 YETİŞKİN"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/addPassengerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yolcu Ekle"
+                android:textStyle="bold"
+                android:textColor="@color/button_title_gray"
+                android:textSize="18sp"
+                android:layout_gravity="right"/>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/findTicketButtonFlightTicketFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="123dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="124dp"
+            android:background="@drawable/custom_button_blue_background"
+            android:paddingHorizontal="48dp"
+            android:text="Bileti Bul"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/main_blue"
+            app:cornerRadius="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearPassenger" />
+
+        <TextView
+            android:id="@+id/contentTextFlightTicketFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/lorem_ipsum_long"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="64dp"
+            android:paddingTop="16dp"
+            android:textSize="14sp"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingFlightAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_dot_animation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

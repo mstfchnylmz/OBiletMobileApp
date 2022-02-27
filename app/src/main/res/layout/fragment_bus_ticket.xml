@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    tools:context=".fragment.BusTicketFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background_color"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/linearFromWhere"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp">
+
+            <ImageView
+                android:id="@+id/imageFromWhere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_location_on_gray_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTextFromWhere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nereden"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerFromWhere"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearToWhere"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/linearFromWhere">
+
+            <ImageView
+                android:id="@+id/imageToWhere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_location_on_gray_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTextToWhere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nereye"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerToWhere"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dropDownVerticalOffset="40dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/changeButtonBusTicketFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_circle_button"
+            android:padding="10dp"
+            android:src="@drawable/ic_exchange_arrow"
+            android:clickable="true"
+            android:elevation="8dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/linearToWhere"
+            app:layout_constraintEnd_toEndOf="@+id/linearFromWhere"
+            app:layout_constraintTop_toTopOf="@+id/linearFromWhere" />
+
+        <LinearLayout
+            android:id="@+id/linearCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="8dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/linearToWhere">
+
+            <ImageView
+                android:id="@+id/imageCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_calendar_month_gray_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/titleTextCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tarih"
+                    android:textColor="@color/main_blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contentTextCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="1 Nisan 2018 Pazar"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/todayButtonBusTicketFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bugün"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/button_background_gray"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tomorrowButtonBusTicketFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yarın"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textColor="@color/button_background_gray"
+                    app:strokeColor="@color/button_background_gray"
+                    app:strokeWidth="1dp"
+                    app:backgroundTint="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/findTicketButtonBusTicketFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button_blue_background"
+            app:backgroundTint="@color/main_blue"
+            android:paddingHorizontal="48dp"
+            android:text="Bileti Bul"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearCalendar" />
+
+        <TextView
+            android:id="@+id/contentTextBusTicketFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/lorem_ipsum_long"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="64dp"
+            android:paddingTop="16dp"
+            android:textSize="14sp"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadindAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_dot_animation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
